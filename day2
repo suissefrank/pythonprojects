@@ -1,9 +1,9 @@
 print("welcome to the tip calculator.")
-price=float(input("\nwhat was the total bill for your dinner in CHF? \n\n"))
-tip=int(input("\nwhat percentage tip would you like to give? 10, 12, 15 ? \n\n"))
+price=float(input(\n"what was the total bill for your dinner in CHF? \n\n"))
+tip=int(input(\n"what percentage tip would you like to give? 10, 12, 15 ? \n\n"))
 percentage=1+(tip/100)
-people=int(input("\nhow many people do we need to split the bill between? \n\n"))
+people=int(input(\n"how many people do we need to split the bill between? \n\n"))
 cost=(price*percentage)/people
 int_cost="{:.2f}".format(cost)
 text_cost=str(int_cost)
-print("\n You then each need to pay "+text_cost+" CHF")
+print(\n"You then each need to pay "+text_cost+" CHF")
