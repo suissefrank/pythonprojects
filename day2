@@ -6,4 +6,4 @@ people=int(input("How many people do we need to split the bill between? \n\n"))
 cost=(price*percentage)/people
 int_cost="{:.2f}".format(cost)
 text_cost=str(int_cost)
-print("You then each need to pay "+text_cost+" CHF")
+print("\n"+"You then each need to pay "+text_cost+" CHF")
