@@ -1,0 +1,42 @@
+print('''
+*******************************************************************************
+          |                   |                  |                     |
+ _________|________________.=""_;=.______________|_____________________|_______
+|                   |  ,-"_,=""     `"=.|                  |
+|___________________|__"=._o`"-._        `"=.______________|___________________
+          |                `"=._o`"=._      _`"=._                     |
+ _________|_____________________:=._o "=._."_.-="'"=.__________________|_______
+|                   |    __.--" , ; `"=._o." ,-"""-._ ".   |
+|___________________|_._"  ,. .` ` `` ,  `"-._"-._   ". '__|___________________
+          |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
+ _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
+|                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
+|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
+/______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
+____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
+/______/______/______/______/____"=._o._; | ;_.--"o.--"_/______/______/______/_
+____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
+/______/______/______/______/______/______/______/______/______/______/_____ /
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.") 
+choice1 = input('you\'re at a crossroad, where do you go? Type "right" or "left"\n\n').lower()
+
+if choice1 == "left":
+  swim = input('you now have the choice to swim or to wait for the boat. What will you chose? Type "swim" or "wait"\n\n').lower()
+  if swim == "swim":
+    print("\n\nAh snap, you got attacked by a trout. Game Over! ")    
+  elif swim == "wait":
+      door = input('You came across the river and found a building with three doors: yellow, red, and blue. Which one do you choose? Type "yellow", "red", or "blue"\n\n').lower()
+      if door == "yellow":
+        print ("\n\nthere is nothing in here, you lost the game. Game Over! ")
+      elif door == "blue":  
+        print ("\n\nThe door locks itself behind you and you are trapped! Game Over !")
+      elif door == "red":
+        print ("\n\namazing! You found the treasure and you are going home. Well done! ") 
+      else:
+        print ("\n\nyou lost your way. Game Over! ")  
+else:
+  print("\n\ntoo bad, you fell into a hole. Game Over! ") 
