@@ -1,0 +1,52 @@
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+game = [rock, paper, scissors] 
+choice_player = int(input ('type "0" for rock, "1" for paper, "2" for scissors"\n\n'))
+if choice_player < 0 or choice_player >= 3:
+  print ("\nWrong entry, try again !")
+else:
+  print(f"your choice:" + game[choice_player])
+
+  choice_cpu = random.randint (0,2)
+  print (f" computer chose: \n" + game[choice_cpu])
+
+  if choice_player == 0 and choice_cpu == 1:
+    print ("\nYou lose!")
+  elif choice_player == 1 and choice_cpu == 2:
+    print ("\nYou lose!")  
+  elif choice_player == 2 and choice_cpu == 0:
+    print ("\nyou lose!")
+  elif choice_player == 0 and choice_cpu == 2:
+    print ("\nyou win!") 
+  elif choice_player == 1 and choice_cpu == 0:
+    print ("\nyou win!") 
+  elif choice_player == 2 and choice_cpu == 1:
+    print ("\nyou win!")    
+  else:
+    print ("\n it's a draw! Try again ! ")  
