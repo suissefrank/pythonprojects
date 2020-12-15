@@ -10,19 +10,21 @@ nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
 #specify empty list for code entry
-code = []
+code = ""
 #pick random letters based on reply given
-for ran_letter in range(0,nr_letters):
-  code.append(random.choice(letters))
+for ran_letter in range(1,nr_letters+1):
+  code += random.choice(letters)
 #then pick random symbols based on reply given
-for ran_symbol in range(0,nr_symbols):
-  code.append(random.choice(symbols))
+for ran_symbol in range(1,nr_symbols+1):
+  code += random.choice(symbols)
 #finally pick random numbers based on reply given  
-for ran_numbers in range(0,nr_numbers):
-  code.append(random.choice(numbers))
+for ran_numbers in range(1,nr_numbers+1):
+  code += random.choice(numbers)
 #define the length of the code to allow random sorting  
 length =len(code)  
 #specify new list, based on "code" entries, and randomized based on it's length
 pswrd = random.sample(code,length)
-#print the list horizontally without (",
-print(*pswrd, sep = "")
+#print the code in given order
+print(code)
+#print the randomized code horizontally without (",
+print(*pswrd,sep="")
