@@ -1,0 +1,85 @@
+import random
+stages = ['''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', '''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========
+''', '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========
+''']
+end_of_game = False
+word_list = ["lausanne", "papa", "maman"]
+chosen_word = random.choice(word_list)
+word_length = len(chosen_word)
+lives = 6
+display = []
+
+print(f'Pssst, le mot commence par: {chosen_word[0]} \net possède {word_length} caractères.')
+for _ in range(word_length):
+    display += "_"
+print(*display,sep=" ")
+while not end_of_game:
+    guess = input('écris un caractère et clique "enter": ').lower()
+    for position in range(word_length):
+        letter = chosen_word[position]
+        if letter == guess:
+            display[position] = letter
+    if display.count(guess)==0:
+        print(stages[lives])
+        print("zut! Tu as perdu une vie!")
+        lives -= 1  
+    print(f"{' '.join(display)}")
+    if lives == 0:
+        end_of_game = True
+        print(f"{stages[0]} \n\n dommage, c'est terminé pour toi!")
+    elif "_" not in display:
+        end_of_game = True
+        print("Bravo, tu as gagné! ")     
