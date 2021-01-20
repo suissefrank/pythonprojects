@@ -1,0 +1,45 @@
+import random 
+from replit import clear
+from art import logo
+print(logo)
+def should_start():
+    should_continue = input("\ndo you want to start again? Type 'yes' or 'no'.\n").lower()
+    if should_continue == "yes":
+        clear()
+        return gaming()
+    else:
+        clear()
+        return print("No problemo, thank you for playing with me!") 
+          
+def gaming():
+    NUMBER = random.choice(range(1,100))
+    given_number = {}
+    life = 0
+    game_on = True
+    DIFFICULTY = input(f"Choose a difficulty, type either 'easy' or 'hard'.\n")
+    if DIFFICULTY == "easy":
+        life += 10
+    if DIFFICULTY == "hard":
+        life += 5
+    while game_on:
+        for trials in range(0,life):
+            print (f"\nyou have {life} attempts to guess the number!\n")
+            given_number = int(input("enter your guessed number\n"))
+            if given_number == NUMBER:
+                clear()
+                print(f"congratulation, you guessed the correct number which was {given_number}!")
+                return should_start()
+            if given_number > NUMBER:
+                life -= 1
+                clear()
+                print(f"\noups, your number {given_number} is to high.\n")
+            elif given_number < NUMBER:
+                life -= 1
+                clear()
+                print(f"\noups, your number {given_number} is to low.\n")
+            if life == 0:
+                game_on = False
+                clear()
+                print(f"\nsorry, you did not find the number, which was {NUMBER}")   
+                should_start()
+gaming()
